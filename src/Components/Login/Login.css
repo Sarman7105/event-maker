@@ -1,0 +1,16 @@
+h1 {
+  display: flex;
+  flex-direction: row;
+}
+h1:before, h1:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid orangered;
+  margin: auto;
+}
+h1:before {
+  margin-right: 1px 
+}
+h1:after {
+  margin-left: 1px 
+}
