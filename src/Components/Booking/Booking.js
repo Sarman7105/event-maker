@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useState}  from 'react';
 import Sidebar from '../../Components/DashBoard/Sidebar/Sidebar';
 import ProcessPayment from './ProcessPayment';
 
 const Booking = () => {
+  const [bookingInfo,setBookingInfo]=useState({})
 	return (
 		<div className="row">
 			<div className="col-md-2 p-1">
@@ -18,7 +19,8 @@ const Booking = () => {
 							type="text"
 							class="form-control"
 							id="exampleFormControlInput1"
-							placeholder="Enter Your Name"
+              placeholder="Enter Your Name"
+              
 						/>
 					</div>
 					<div class="mb-3">
