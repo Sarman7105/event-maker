@@ -4,6 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import AddAdmin from './Components/AddAdmin/AddAdmin';
 import AddService from './Components/AddService/AddService';
 import Booking from './Components/Booking/Booking';
 import DashBoard from './Components/DashBoard/DashBoard/DashBoard';
@@ -48,6 +49,10 @@ function App() {
         
         <Route path="/booking">
           <Booking />
+        </Route>
+        
+          <Route path="/addAdmin">
+          <AddAdmin />
         </Route>
 
         <Route exact path="/">
