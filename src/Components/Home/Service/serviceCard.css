@@ -1,0 +1,20 @@
+.card-container{
+    background-color:#ffffff;
+    height: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card-container:hover{
+    background-color: #F15B22;
+}
+.card-container img {
+    height: 80px;
+    display:block;
+    margin: auto;
+
+}
+
+.card-container button{
+    background-color: #df7e58;
+}

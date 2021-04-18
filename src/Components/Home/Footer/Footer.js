@@ -7,15 +7,26 @@ import Updates from './Updates';
 const Footer = () => {
 	return (
 		<div className="footer-container">
-			<div className="container d-flex justify-content-center">
-				<div className="col-md-4 bg-success">
-					<Updates />
-				</div>
-				<div className="col-md-4 bg-info">
-					<Company />
-				</div>
-				<div className="col-md-4 bg-danger">
-					<ContactUs />
+			<div className="container">
+				<div className="row gy-5 justify-content-evenly">
+					<div className="col-md-4 ">
+						<div className="d-flex justify-content-center">
+							<Updates />
+						</div>
+						
+					</div>
+					<div className="col-md-4">
+						<div className=" d-flex justify-content-center">
+							<Company/>
+						</div>
+						
+					</div>
+					<div className="col-md-4 ">
+						<div className=" d-flex justify-content-center">
+							<ContactUs />
+						</div>
+						
+					</div>
 				</div>
 			</div>
 		</div>

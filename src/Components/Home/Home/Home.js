@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../SharedF/Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import Service from '../Service/Service';
 import Slider from '../Slider/Slider';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Navbar />
             <Slider />
+            <Service/>
             <Footer/>
         </div>
     );
