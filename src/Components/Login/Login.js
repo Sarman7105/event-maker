@@ -67,7 +67,6 @@ const Login = () => {
         <div>
             
             <div className="d-flex justify-content-center align-items-center">
-                <h3>welcome { user.name}</h3>
                 <div className="col-md-4 mt-5">
                     <div className="d-flex align-items-center justify-content-center">
                         <img className="logo" src="https://i.ibb.co/DkC1BtF/event-Management-Icon.png" alt="event-Management-Icon" border="0"></img>
