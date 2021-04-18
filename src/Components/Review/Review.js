@@ -22,8 +22,8 @@ const Review = () => {
 	};
     
     const handleSubmit = (event) => {
-		// const url = `https://shrouded-springs-84958.herokuapp.com/addService`;
-        const url = `http://localhost:5055/addReview`;
+		const url = `https://shrouded-springs-84958.herokuapp.com/addReview`;
+        // const url = `http://localhost:5055/addReview`;
         const reviewDetails = { name, companyName, review };
         console.log(reviewDetails);
 

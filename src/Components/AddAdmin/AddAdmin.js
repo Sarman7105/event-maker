@@ -22,10 +22,7 @@ const AddAdmin = () => {
 	};
 
 	const postData = (adminData) => {
-		// const url = `https://shrouded-springs-84958.herokuapp.com/addAdmin`;
-		const url = `http://localhost:5055/addAdmin`;
-
-		// console.log(eventData);
+		const url = `https://shrouded-springs-84958.herokuapp.com/addAdmin`;
 		fetch(url, {
 			method: 'POST',
 			headers: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -10,7 +10,8 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar = ({ isAdmin }) => {
+  const [value, setValue] = useState('');
   return (
     <div
       style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}
@@ -27,29 +28,34 @@ const Sidebar = () => {
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
+          
           <CDBSidebarMenu>
             <NavLink exact to="/" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/tables" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Order List</CDBSidebarMenuItem>
+            <NavLink exact to="/dashboard" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Dash Board</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
+
+            {
+              (isAdmin)? 
+              (<><NavLink exact to="/addAdmin" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user-plus">Make Admin</CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink exact to="/addservice" activeClassName="activeClicked">
+            </NavLink> <NavLink exact to="/addservice" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="plus">
                 Add Service
               </CDBSidebarMenuItem>
-            </NavLink>
+                  </NavLink></>) : <p>{" "}</p>
+            }
 
             <NavLink
-              exact to="/hero404"
+              exact to="/review"
             >
               <CDBSidebarMenuItem icon="border-all">
-                Manage Services
+                Review
               </CDBSidebarMenuItem>
             </NavLink>
+            
           </CDBSidebarMenu>
         </CDBSidebarContent>
 

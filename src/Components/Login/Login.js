@@ -14,7 +14,7 @@ const Login = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     let history = useHistory();
     let location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+    let { from } = location.state || { from: { pathname: "/dashboard" } };
 	if (firebase.apps.length === 0) {
 		firebase.initializeApp(firebaseConfig);
     }
@@ -40,7 +40,8 @@ const Login = () => {
 				const userInfo = result.user;
 				console.log('success');
                 setInfo(userInfo);
-                storeAuthToken();
+                history.replace(from);
+                // storeAuthToken();
 			})
 		.catch((error) => {
 				var errorCode = error.code;
@@ -51,15 +52,15 @@ const Login = () => {
 		event.preventDefault();
     };
     
-    const storeAuthToken = () => {
-    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
-      .then(function (idToken) {
-        sessionStorage.setItem('token', idToken);
-        history.replace(from);
-      }).catch(function (error) {
-        // Handle error
-      });
-  }
+//     const storeAuthToken = () => {
+//     firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+//       .then(function (idToken) {
+//         sessionStorage.setItem('token', idToken);
+//         history.replace(from);
+//       }).catch(function (error) {
+//         // Handle error
+//       });
+//   }
 
 
     return (

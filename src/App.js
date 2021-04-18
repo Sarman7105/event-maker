@@ -11,6 +11,7 @@ import DashBoard from './Components/DashBoard/DashBoard/DashBoard';
 import Home from './Components/Home/Home/Home';
 import Login from './Components/Login/Login';
 import Review from './Components/Review/Review';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 
 export const UserContext = createContext();
 const userInfo = {
@@ -36,24 +37,24 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/dashboard">
+        <PrivateRoute path="/dashboard">
           <DashBoard />
-        </Route>
-        <Route path="/addservice">
+        </PrivateRoute>
+        <PrivateRoute path="/addservice">
           <AddService />
-        </Route>
+        </PrivateRoute>
 
-        <Route path="/review">
+        <PrivateRoute path="/review">
           <Review />
-        </Route>
+        </PrivateRoute>
         
-        <Route path="/booking">
+        <PrivateRoute path="/booking/:service">
           <Booking />
-        </Route>
+        </PrivateRoute>
         
-          <Route path="/addAdmin">
+          <PrivateRoute path="/addAdmin">
           <AddAdmin />
-        </Route>
+        </PrivateRoute>
 
         <Route exact path="/">
             <Home></Home>

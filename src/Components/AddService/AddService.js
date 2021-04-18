@@ -6,11 +6,15 @@ const AddService = () => {
 	const [ service, setService ] = useState('');
 	const [ serviceDetails, setServiceDetails ] = useState('');
 	const [ serviceImg, setServiceImg ] = useState('');
+	const [ price, setPrice ] = useState('');
 
 	const handleOnBlur = (event) => {
 		console.log(event.target.name, ' ', event.target.value);
 		if (event.target.name === 'service') {
 			setService(event.target.value);
+		}
+		if (event.target.name === 'price') {
+			setPrice(event.target.value);
 		}
 		if (event.target.name === 'description') {
 			setServiceDetails(event.target.value);
@@ -39,7 +43,8 @@ const AddService = () => {
 		const eventData = {
 			name: service,
 			details: serviceDetails,
-			url: serviceImg
+			url: serviceImg,
+			value:price
 		};
 		console.log(eventData);
 		postData(eventData);
@@ -47,8 +52,7 @@ const AddService = () => {
 	};
 
 	const postData = (eventData) => {
-		// const url = `https://shrouded-springs-84958.herokuapp.com/addService`;
-		const url = `http://localhost:5055/addService`;
+		const url = `https://shrouded-springs-84958.herokuapp.com/addService`;
 
 		// console.log(eventData);
 		fetch(url, {
@@ -80,6 +84,18 @@ const AddService = () => {
 								onBlur={handleOnBlur}
 							/>
 						</div>
+						<div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">
+								Price
+							</label>
+							<input
+								type="text"
+								class="form-control"
+								name="price"
+								placeholder="Price"
+								onBlur={handleOnBlur}
+							/>
+						</div>
 
 						<div class="mb-3">
 							<input type="file" class="form-control" onChange={handlePhoto} />
@@ -95,7 +111,6 @@ const AddService = () => {
 						</div>
 					</form>
 				</div>
-				
 			</div>
 		</div>
 	);
